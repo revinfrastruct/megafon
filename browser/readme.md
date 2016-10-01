@@ -7,6 +7,6 @@
 + Webpack requires relative to `./client`, i.e
 
   ```js
-  # client/lib/foo.js
-  const bar = require('lib/bar') # given client/lib/bar.js
+  // client/lib/foo.js
+  const bar = require('lib/bar') // given client/lib/bar.js
   ```
