@@ -1,8 +1,8 @@
 FROM nginx:latest
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY conf.d/ /etc/nginx/conf.d/
+WORKDIR /etc/nginx
+COPY . /etc/nginx
 
 EXPOSE 80
 
-CMD [ "nginx", "-g", "'daemon off;'"]
+CMD ["nginx", "-g", "daemon off;"]
