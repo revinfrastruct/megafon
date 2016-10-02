@@ -1,11 +1,12 @@
-import {Router, Route, browserHistory} from 'react-router'
+import {Router, Route, IndexRoute, browserHistory} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 import {Provider} from 'react-redux'
 import ReactDOM from 'react-dom'
 import React from 'react'
 
 import App from './containers/App'
-import Channels from './containers/Channels'
+import ChannelList from './containers/ChannelList'
+import EventList from './containers/EventList'
 import configure from './store'
 
 const store = configure()
@@ -15,7 +16,10 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path='/' component={App}>
-        <Route path='channels' component={Channels} />
+        <IndexRoute component={ChannelList} />
+
+        <Route path='channels' component={ChannelList} />
+        <Route path='channels/:idChannel' component={EventList} />
       </Route>
     </Router>
   </Provider>,

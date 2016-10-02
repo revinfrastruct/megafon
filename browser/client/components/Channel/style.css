@@ -1,5 +1,5 @@
 .normal {
-  border: 1px solid #0000ff;
+  border: 1px solid #00f;
   list-style: none;
   margin-bottom: 1em;
   padding: 1em;
@@ -7,6 +7,15 @@
   align-items: stretch;
   display: flex;
   justify-content: center;
+}
+
+.normal:hover {
+  background-color: #00f;
+  color: #fff;
+}
+
+.normal:hover svg {
+  fill: #fff;
 }
 
 .icon {

@@ -36,5 +36,9 @@
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.7.1"
+  },
+  "dependencies": {
+    "postcss-normalize": "^0.3.0",
+    "react-icons": "^2.2.1"
   }
 }

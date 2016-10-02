@@ -1,6 +1,5 @@
-var rucksack = require('rucksack-css')
-var webpack = require('webpack')
-var path = require('path')
+const webpack = require('webpack')
+const path = require('path')
 
 module.exports = {
   context: path.join(__dirname, './client'),
@@ -55,9 +54,10 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   postcss: [
-    rucksack({
+    require('rucksack-css')({
       autoprefixer: true
-    })
+    }),
+    require('postcss-normalize')
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
