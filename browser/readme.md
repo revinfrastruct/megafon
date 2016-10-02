@@ -8,5 +8,5 @@
 
   ```js
   // client/lib/foo.js
-  const bar = require('lib/bar') // given client/lib/bar.js
+  import bar from 'lib/bar' // given client/lib/bar.js
   ```
