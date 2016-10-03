@@ -38,6 +38,7 @@
     "webpack-hot-middleware": "^2.7.1"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "postcss-normalize": "^0.3.0",
     "react-icons": "^2.2.1",
     "redux-thunk": "^2.1.0"
