@@ -3,13 +3,13 @@ import Channel from 'components/Channel'
 
 const data = [
   {
-    id: '5fd5f30b-fdd5-4f7f-a9af-18e752cc02e5',
+    topic: 'nmr',
     title: 'NMR 12e September',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
   },
 
   {
-    id: '5fd5f30b-fdd5-4f7f-a9af-18e752cc02e3',
+    topic: 'forbifart-sthlm',
     title: 'Förbifart Stockholm',
     description: 'Consectetur adipisicing elit, sed do eiusmod tempor.'
   }

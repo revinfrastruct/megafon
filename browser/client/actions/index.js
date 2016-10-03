@@ -1,5 +1,8 @@
-export function sampleAction (param) {
+export function addEvent (event) {
   return (dispatch, getState) => {
-
+    dispatch({
+      type: 'ADD_EVENT',
+      payload: event
+    })
   }
 }

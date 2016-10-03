@@ -6,6 +6,10 @@ import style from './style.css'
 import Header from 'components/Header'
 
 class App extends Component {
+  componentWillMount () {
+
+  }
+
   render () {
     const {children} = this.props
 

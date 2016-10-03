@@ -3,9 +3,9 @@ import style from './style.css'
 import {Link} from 'react-router'
 import {IoFlag} from 'react-icons/lib/io'
 
-const Channel = ({id, kind, title, description}) => {
+const Channel = ({topic, title, description}) => {
   return (
-    <Link to={'channels/' + id}>
+    <Link to={'channels/' + topic}>
       <li className={style['normal']}>
         <div className={style['icon']}>
           <IoFlag size={45} color='#ff0000' />
