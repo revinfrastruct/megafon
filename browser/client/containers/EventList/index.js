@@ -6,10 +6,10 @@ import Event from 'components/Event'
 
 class EventList extends Component {
   componentDidMount () {
-    const {addEvent} = this.props.actions
+    const {actions} = this.props
 
     this.addEventTimer = window.setInterval(() => {
-      addEvent({
+      actions.addEvent({
         kind: 'info',
         title: 'Important information',
         description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
