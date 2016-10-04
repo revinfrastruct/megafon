@@ -1,1 +1,1 @@
-export const EXAMPLE_CONSTANT = 'example_constant'
+export const ADD_EVENT = 'ADD_EVENT'
