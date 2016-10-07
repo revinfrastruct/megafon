@@ -1,12 +1,12 @@
 .normal {
+  align-items: stretch;
   border: 1px solid #0000ff;
+  display: flex;
+  justify-content: center;
   list-style: none;
   margin-bottom: 1em;
   padding: 1em;
   width: 100%;
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
 }
 
 .icon {
