@@ -1,7 +1,7 @@
 # Megafon
-![Anarchists](https://img.shields.io/badge/anarchists-Ⓐ-000000.svg)
-![Communists](https://img.shields.io/badge/communists-☭-ff0000.svg)
-![Socialists](https://img.shields.io/badge/socialists-★-ff0000.svg)
+![Anarchism](https://img.shields.io/badge/anarchism-Ⓐ-000000.svg)
+![Communism](https://img.shields.io/badge/communism-☭-ff0000.svg)
+![Socialism](https://img.shields.io/badge/socialism-★-ff0000.svg)
 ![Ideology passing](https://img.shields.io/badge/ideology-passing-brightgreen.svg)
 
 ## Prerequisites
