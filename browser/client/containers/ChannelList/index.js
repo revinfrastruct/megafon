@@ -1,4 +1,7 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as actions from 'actions'
 import Channel from 'components/Channel'
 
 const data = [
@@ -30,3 +33,19 @@ class ChannelList extends Component {
 }
 
 export default ChannelList
+function mapStateToProps (state) {
+  return {
+    channels: state.channels
+  }
+}
+
+function mapDispatchToProps (dispatch) {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ChannelList)
