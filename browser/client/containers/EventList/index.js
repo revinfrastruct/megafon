@@ -2,23 +2,20 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actions from 'actions'
+import socket from 'socket'
 import Event from 'components/Event'
 
 class EventList extends Component {
   componentDidMount () {
     const {actions} = this.props
 
-    this.addEventTimer = window.setInterval(() => {
-      actions.addEvent({
-        kind: 'info',
-        title: 'Important information',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-      })
-    }, 15000)
+    socket.on('events', function (event) {
+      actions.addEvent(event)
+    })
   }
 
   componentWillUnmount () {
-    window.clearInterval(this.addEventTimer)
+    socket.off('events')
   }
 
   render () {

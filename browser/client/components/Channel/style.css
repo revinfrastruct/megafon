@@ -1,12 +1,12 @@
 .normal {
+  align-items: stretch;
   border: 1px solid #00f;
+  display: flex;
+  justify-content: center;
   list-style: none;
   margin-bottom: 1em;
   padding: 1em;
   width: 100%;
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
 }
 
 .normal:hover {
@@ -32,6 +32,6 @@
 }
 
 .normal h2 {
-  font-weight: bold;
   font-size: 1.3em;
+  font-weight: bold;
 }
