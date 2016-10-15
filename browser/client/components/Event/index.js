@@ -5,6 +5,7 @@ import {
   IoIosBellOutline,
   IoSocialTwitter
 } from 'react-icons/lib/io'
+import moment from 'moment'
 
 const icons = {
   info: <IoIosInformatoutline size={35} color='#0000ff' />,
@@ -12,7 +13,9 @@ const icons = {
   tweet: <IoSocialTwitter size={35} color='#1da1f2' />
 }
 
-const Event = ({kind, title, description}) => {
+const Event = ({kind, title, description, createdAt}) => {
+  const time = moment(createdAt).fromNow()
+
   return (
     <li className={style['normal']}>
       <div className={style['icon']}>
@@ -21,6 +24,7 @@ const Event = ({kind, title, description}) => {
 
       <div className={style['content']}>
         <h2>{title}</h2>
+        <time datetime={createdAt}>{time}</time>
         <p>{description}</p>
       </div>
     </li>
