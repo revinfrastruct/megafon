@@ -18,7 +18,6 @@ class ChannelList extends Component {
   }
 }
 
-export default ChannelList
 function mapStateToProps (state) {
   return {
     channels: state.channels
