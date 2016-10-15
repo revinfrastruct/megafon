@@ -24,8 +24,14 @@ const Event = ({kind, title, description, createdAt}) => {
 
       <div className={style['content']}>
         <h2>{title}</h2>
-        <time datetime={createdAt}>{time}</time>
-        <p>{description}</p>
+
+        <time datetime={createdAt}>
+          Publicerad {time}
+        </time>
+
+        <p>
+          {description}
+        </p>
       </div>
     </li>
   )
