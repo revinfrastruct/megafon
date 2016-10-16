@@ -17,8 +17,6 @@ setInterval(function () {
   })
 }, 5000)
 
-router.get('/channels/:id', require('./src/actions/channels/get'))
-
 app
   .use(router.routes())
   .use(router.allowedMethods())
