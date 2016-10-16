@@ -11,6 +11,10 @@ export function addEvent (event) {
     dispatch({
       type: ADD_EVENT,
       payload: event
+export function setChannelFilter (channelFilter) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: SET_CHANNEL_FILTER, channelFilter
     })
   }
 }
