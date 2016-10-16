@@ -8,7 +8,10 @@ const casual = require('casual')
 new IO().attach(app)
 
 setInterval(function () {
-  app.io.broadcast('events', {
+  const channel = sample(['nmr', 'forbifart-sthlm'])
+
+  app.io.broadcast(channel, {
+    channel: channel,
     kind: sample(['bell', 'tweet', 'info']),
     title: casual.title,
     description: casual.description,
