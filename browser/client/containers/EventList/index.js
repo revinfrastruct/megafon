@@ -6,16 +6,23 @@ import socket from 'socket'
 import Event from 'components/Event'
 
 class EventList extends Component {
-  componentDidMount () {
-    const {actions} = this.props
+  constructor (props) {
+    super(props)
+    const {actions, params: {idChannel}} = props
+    actions.setChannelFilter(idChannel)
+  }
 
-    socket.on('events', function (event) {
+  componentDidMount () {
+    const {actions, params: {idChannel}} = this.props
+    socket.on(idChannel, function (event) {
       actions.addEvent(event)
     })
   }
 
   componentWillUnmount () {
-    socket.off('events')
+    const {params: {idChannel}} = this.props
+    socket.off(idChannel)
+    actions.setChannelFilter(null)
   }
 
   render () {
@@ -33,7 +40,9 @@ class EventList extends Component {
 
 function mapStateToProps (state) {
   return {
-    events: state.events
+    events: state.events.bucket.filter(event => {
+      return event.channel === state.events.channelFilter
+    })
   }
 }
 

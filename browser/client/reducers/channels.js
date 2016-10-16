@@ -17,6 +17,6 @@ const initialState = [
 
 export default handleActions({
   [ADD_CHANNEL] (state, action) {
-    return [action.payload, ...state]
+    return [action.channel, ...state]
   }
 }, initialState)
