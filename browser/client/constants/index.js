@@ -1,2 +1,3 @@
 export const ADD_EVENT = 'ADD_EVENT'
 export const ADD_CHANNEL = 'ADD_CHANNEL'
+export const SET_CHANNEL_FILTER = 'SET_CHANNEL_FILTER'
