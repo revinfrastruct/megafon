@@ -40,7 +40,9 @@ class EventList extends Component {
 
 function mapStateToProps (state) {
   return {
-    events: state.events
+    events: state.events.bucket.filter(event => {
+      return event.channel === state.events.channelFilter
+    })
   }
 }
 
