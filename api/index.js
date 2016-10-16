@@ -5,8 +5,7 @@ const router = require('koa-router')()
 const sample = require('lodash').sample
 const casual = require('casual')
 
-const io = new IO()
-io.attach(app)
+new IO().attach(app)
 
 setInterval(function () {
   app.io.broadcast('events', {
