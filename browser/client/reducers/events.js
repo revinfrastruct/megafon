@@ -8,7 +8,10 @@ const initialState = {
 
 export default handleActions({
   [ADD_EVENT] (state, action) {
-    return [action.payload, ...state]
+    return Object.assign({}, state, {
+      bucket: [action.event, ...state.bucket]
+    })
+  },
 
   [SET_CHANNEL_FILTER] (state, action) {
     return Object.assign({}, state, {
