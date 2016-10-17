@@ -5,6 +5,7 @@ import * as actions from 'actions'
 import socket from 'socket'
 import Toggle from 'react-toggle'
 import Event from 'components/Event'
+import style from './style.css'
 require('react-toggle/style.css')
 
 class EventList extends Component {

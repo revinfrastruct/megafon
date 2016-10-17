@@ -1,0 +1,14 @@
+.event-header {
+  align-items: flex-end;
+  display: flex;
+}
+
+.event-header label {
+  display: inline-block;
+  flex: 1;
+  font-weight: bold;
+  margin-right: 10px;
+  position: relative;
+  text-align: right;
+  top: -2px;
+}
