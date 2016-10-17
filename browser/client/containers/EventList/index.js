@@ -21,7 +21,7 @@ class EventList extends Component {
 
   componentDidMount () {
     const {actions, params: {idChannel}} = this.props
-    socket.on(idChannel, function (event) {
+    socket.on(idChannel, event => {
       actions.addEvent(event)
     })
   }
