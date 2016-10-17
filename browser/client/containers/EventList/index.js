@@ -3,7 +3,9 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actions from 'actions'
 import socket from 'socket'
+import Toggle from 'react-toggle'
 import Event from 'components/Event'
+require('react-toggle/style.css')
 
 class EventList extends Component {
   constructor (props) {
