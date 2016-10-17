@@ -13,6 +13,10 @@ class EventList extends Component {
     super(props)
     const {actions, params: {idChannel}} = props
     actions.setChannelFilter(idChannel)
+
+    this.state = {
+      isLive: true
+    }
   }
 
   componentDidMount () {
