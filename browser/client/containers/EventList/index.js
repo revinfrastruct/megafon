@@ -38,9 +38,19 @@ class EventList extends Component {
     })
 
     return (
-      <ol>
-        {events}
-      </ol>
+      <div className={style['normal']}>
+        <div className={style['event-header']}>
+          <label htmlFor='is-live'>
+            Uppdaterar live
+          </label>
+
+          <Toggle id='is-live' defaultChecked={this.state.isLive} />
+        </div>
+
+        <ol>
+          {events}
+        </ol>
+      </div>
     )
   }
 }
