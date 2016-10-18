@@ -60,7 +60,7 @@ class EventList extends Component {
 
           <Toggle
             id='isLive'
-            defaultChecked={this.state.isLive}
+            defaultChecked={this.props.isLive}
             onChange={this.handleToggle.bind(this)} />
         </div>
 
