@@ -29,8 +29,9 @@ class EventList extends Component {
     actions.setChannelFilter(null)
   }
 
-  handleToggle () {
-    this.setState({isLive: !this.state.isLive}, this.toggleListener)
+  handleToggle (event) {
+    const {actions, isLive} = this.props
+    actions.setLiveToggle(!isLive)
   }
 
   toggleListener () {
