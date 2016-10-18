@@ -11,9 +11,13 @@ require('react-toggle/style.css')
 class EventList extends Component {
   constructor (props) {
     super(props)
-    const {actions, params: {idChannel}} = props
+    const {actions, isLive, params: {idChannel}} = props
     actions.setChannelFilter(idChannel)
 
+    if (isLive) {
+      socket.on(idChannel, event => {
+        actions.addEvent(event)
+      })
     }
   }
 
