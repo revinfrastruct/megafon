@@ -36,10 +36,10 @@ class EventList extends Component {
     actions.setLiveToggle(!isLive)
   }
 
-  toggleListener () {
-    const {actions, params: {idChannel}} = this.props
+  toggleSocketListener () {
+    const {actions, isLive, params: {idChannel}} = this.props
 
-    if (this.state.isLive) {
+    if (!isLive) {
       socket.on(idChannel, event => {
         actions.addEvent(event)
       })
