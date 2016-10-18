@@ -3,26 +3,49 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actions from 'actions'
 import socket from 'socket'
+import Toggle from 'react-toggle'
 import Event from 'components/Event'
+import style from './style.css'
+require('react-toggle/style.css')
 
 class EventList extends Component {
   constructor (props) {
     super(props)
-    const {actions, params: {idChannel}} = props
+    const {actions, isLive, params: {idChannel}} = props
     actions.setChannelFilter(idChannel)
+
+    if (isLive) {
+      socket.on(idChannel, event => {
+        actions.addEvent(event)
+      })
+    }
   }
 
-  componentDidMount () {
-    const {actions, params: {idChannel}} = this.props
-    socket.on(idChannel, function (event) {
-      actions.addEvent(event)
-    })
+  componentWillReceiveProps (nextProps) {
+    if (this.props.isLive !== nextProps.isLive) {
+      this.toggleSocketListener()
+    }
   }
 
   componentWillUnmount () {
-    const {params: {idChannel}} = this.props
-    socket.off(idChannel)
     actions.setChannelFilter(null)
+  }
+
+  handleToggle (event) {
+    const {actions, isLive} = this.props
+    actions.setLiveToggle(!isLive)
+  }
+
+  toggleSocketListener () {
+    const {actions, isLive, params: {idChannel}} = this.props
+
+    if (!isLive) {
+      socket.on(idChannel, event => {
+        actions.addEvent(event)
+      })
+    } else {
+      socket.removeAllListeners(idChannel)
+    }
   }
 
   render () {
@@ -31,9 +54,22 @@ class EventList extends Component {
     })
 
     return (
-      <ol>
-        {events}
-      </ol>
+      <div className={style['normal']}>
+        <div className={style['event-header']}>
+          <label htmlFor='isLive'>
+            Uppdaterar live
+          </label>
+
+          <Toggle
+            id='isLive'
+            defaultChecked={this.props.isLive}
+            onChange={this.handleToggle.bind(this)} />
+        </div>
+
+        <ol>
+          {events}
+        </ol>
+      </div>
     )
   }
 }
@@ -42,7 +78,8 @@ function mapStateToProps (state) {
   return {
     events: state.events.bucket.filter(event => {
       return event.channel === state.events.channelFilter
-    })
+    }),
+    isLive: state.channels.isLive
   }
 }
 
