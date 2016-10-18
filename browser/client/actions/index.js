@@ -1,4 +1,9 @@
-import {ADD_CHANNEL, ADD_EVENT, SET_CHANNEL_FILTER} from 'constants'
+import {
+  ADD_CHANNEL,
+  ADD_EVENT,
+  SET_CHANNEL_FILTER,
+  SET_LIVE_TOGGLE
+} from 'constants'
 
 export function addChannel (channel) {
   return (dispatch, getState) => {

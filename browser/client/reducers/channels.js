@@ -1,5 +1,5 @@
 import {handleActions} from 'redux-actions'
-import {ADD_CHANNEL} from 'constants'
+import {ADD_CHANNEL, SET_LIVE_TOGGLE} from 'constants'
 
 const initialState = {
   isLive: true,
