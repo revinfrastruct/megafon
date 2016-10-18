@@ -3,13 +3,13 @@ import {ADD_EVENT, SET_CHANNEL_FILTER} from 'constants'
 
 const initialState = {
   channelFilter: null,
-  bucket: []
+  eventList: []
 }
 
 export default handleActions({
   [ADD_EVENT] (state, action) {
     return Object.assign({}, state, {
-      bucket: [action.event, ...state.bucket]
+      eventList: [action.event, ...state.eventList]
     })
   },
 
