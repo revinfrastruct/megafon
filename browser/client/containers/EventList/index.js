@@ -40,11 +40,14 @@ class EventList extends Component {
     return (
       <div className={style['normal']}>
         <div className={style['event-header']}>
-          <label htmlFor='is-live'>
+          <label htmlFor='isLive'>
             Uppdaterar live
           </label>
 
-          <Toggle id='is-live' defaultChecked={this.state.isLive} />
+          <Toggle
+            id='isLive'
+            defaultChecked={this.state.isLive}
+            onChange={this.handleToggle.bind(this)} />
         </div>
 
         <ol>
