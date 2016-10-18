@@ -31,7 +31,7 @@ class EventList extends Component {
     actions.setChannelFilter(null)
   }
 
-  handleToggle (event) {
+  handleToggle () {
     const {actions, isLive} = this.props
     actions.setLiveToggle(!isLive)
   }
