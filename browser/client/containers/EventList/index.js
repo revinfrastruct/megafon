@@ -74,10 +74,13 @@ class EventList extends Component {
   }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps (state, ownProps) {
   return {
     events: state.events.eventList.filter(event => {
       return event.channel === state.events.channelFilter
+    }),
+    channel: state.channels.channelList.find(channel => {
+      return channel.topic === ownProps.params.idChannel
     }),
     isLive: state.channels.isLive
   }
