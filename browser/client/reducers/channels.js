@@ -24,5 +24,10 @@ export default handleActions({
       channelList: [action.channel, ...state.channelList]
     })
   },
+
+  [SET_LIVE_TOGGLE] (state, action) {
+    return Object.assign({}, state, {
+      isLive: action.isLive
+    })
   }
 }, initialState)

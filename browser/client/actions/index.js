@@ -28,3 +28,11 @@ export function setChannelFilter (channelFilter) {
     })
   }
 }
+
+export function setLiveToggle (isLive) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: SET_LIVE_TOGGLE, isLive
+    })
+  }
+}
