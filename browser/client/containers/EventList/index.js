@@ -28,6 +28,8 @@ class EventList extends Component {
   }
 
   componentWillUnmount () {
+    const idChannel = this.props.params.idChannel
+    socket.removeAllListeners(idChannel)
     actions.setChannelFilter(null)
   }
 
