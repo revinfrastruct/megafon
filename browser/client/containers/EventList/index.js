@@ -53,9 +53,13 @@ class EventList extends Component {
       return <Event key={index} {...event} />
     })
 
+    const channelTitle = this.props.channel.title
+
     return (
       <div className={style['normal']}>
         <div className={style['event-header']}>
+          <h2>{channelTitle}</h2>
+
           <label htmlFor='isLive'>
             Uppdaterar live
           </label>
