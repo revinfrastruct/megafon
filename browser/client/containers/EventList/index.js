@@ -73,7 +73,8 @@ function mapStateToProps (state) {
   return {
     events: state.events.bucket.filter(event => {
       return event.channel === state.events.channelFilter
-    })
+    }),
+    isLive: state.channels.isLive
   }
 }
 
