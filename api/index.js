@@ -2,7 +2,7 @@ const config = require('./config')
 const app = require('koa')()
 const IO = require('koa-socket')
 const router = require('koa-router')()
-const sample = require('lodash').sample
+const sample = require('lodash/sample')
 const casual = require('casual')
 
 new IO().attach(app)
