@@ -6,7 +6,7 @@ import Channel from 'components/Channel'
 
 class ChannelList extends Component {
   render () {
-    const channels = this.props.channels.map((channel, index) => {
+    const channels = this.props.channels.bucket.map((channel, index) => {
       return <Channel key={index} {...channel} />
     })
 
