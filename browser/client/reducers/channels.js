@@ -3,7 +3,7 @@ import {ADD_CHANNEL} from 'constants'
 
 const initialState = {
   isLive: true,
-  bucket: [
+  channelList: [
     {
       topic: 'nmr',
       title: 'NMR 12e September',
@@ -20,6 +20,9 @@ const initialState = {
 
 export default handleActions({
   [ADD_CHANNEL] (state, action) {
-    return [action.channel, ...state]
+    return Object.assign({}, state, {
+      channelList: [action.channel, ...state.channelList]
+    })
+  },
   }
 }, initialState)
