@@ -20,16 +20,27 @@ class EventList extends Component {
   }
 
   componentDidMount () {
-    const {actions, params: {idChannel}} = this.props
-    socket.on(idChannel, event => {
-      actions.addEvent(event)
-    })
+    this.toggleListener()
   }
 
   componentWillUnmount () {
-    const {params: {idChannel}} = this.props
-    socket.off(idChannel)
     actions.setChannelFilter(null)
+  }
+
+  handleToggle () {
+    this.setState({isLive: !this.state.isLive}, this.toggleListener)
+  }
+
+  toggleListener () {
+    const {actions, params: {idChannel}} = this.props
+
+    if (this.state.isLive) {
+      socket.on(idChannel, event => {
+        actions.addEvent(event)
+      })
+    } else {
+      socket.removeAllListeners(idChannel)
+    }
   }
 
   render () {
