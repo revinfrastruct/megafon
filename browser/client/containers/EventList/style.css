@@ -1,14 +1,25 @@
 .event-header {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
 }
 
-.event-header label {
-  display: inline-block;
+.event-header h2 {
+  margin: 0;
+  display: block;
   flex: 1;
+  color: #999999;
+  font-size: 1em;
+}
+
+.event-header h2:before {
+  content: '#';
+  color: #cccccc;
+}
+
+.event-header label {
+  display: block;
   font-weight: bold;
   margin-right: 10px;
   position: relative;
   text-align: right;
-  top: -2px;
 }
