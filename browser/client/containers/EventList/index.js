@@ -21,8 +21,10 @@ class EventList extends Component {
     }
   }
 
-  componentDidMount () {
-    this.toggleListener()
+  componentWillReceiveProps (nextProps) {
+    if (this.props.isLive !== nextProps.isLive) {
+      this.toggleSocketListener()
+    }
   }
 
   componentWillUnmount () {
