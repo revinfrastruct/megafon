@@ -25,6 +25,7 @@
 .normal h2 {
   font-weight: bold;
   font-size: 1.3em;
+  margin-bottom: 0;
 }
 
 .normal time {
