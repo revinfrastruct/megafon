@@ -14,6 +14,7 @@
 .event-header h2:before {
   color: #cccccc;
   content: '#';
+  margin-right: 2px;
 }
 
 .event-header label {
