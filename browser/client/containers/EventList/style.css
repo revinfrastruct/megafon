@@ -4,16 +4,16 @@
 }
 
 .event-header h2 {
-  margin: 0;
+  color: #999999;
   display: block;
   flex: 1;
-  color: #999999;
   font-size: 1em;
+  margin: 0;
 }
 
 .event-header h2:before {
-  content: '#';
   color: #cccccc;
+  content: '#';
 }
 
 .event-header label {
