@@ -28,6 +28,8 @@ a {
 }
 
 .normal {
-    max-width: 50em;
-    margin: 0 auto;
+  margin: 0 auto;
+  max-width: 550px;
+  min-width: 230px;
+  padding: 10px;
 }

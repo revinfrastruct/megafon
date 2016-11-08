@@ -16,31 +16,23 @@ const icons = {
 
 const Event = ({kind, title, description, createdAt}) => {
   return (
-    // <li className={style['normal']}>
-    //   <div className={style['icon']}>
-    //     {icons[kind]}
-    //   </div>
-    //
-    //   <div className={style['content']}>
-    //     <h2>{title}</h2>
-    //
-    //     <time dateTime={createdAt}>
-    //       Publicerad {moment(createdAt).fromNow()}
-    //     </time>
-    //
-    //     <p>
-    //       {description}
-    //     </p>
-    //   </div>
-    // </li>
-    <article>
+    <li className={style['normal']}>
+      <div className={style['icon']}>
+        {icons[kind]}
+      </div>
+
+      <div className={style['content']}>
+        <h2>{title}</h2>
+
+        <time dateTime={createdAt}>
+          Publicerad {moment(createdAt).fromNow()}
+        </time>
+
         <p>
-           {description}
+          {description}
         </p>
-        <p>
-            <a href="#" className="timestamp">{moment(createdAt).fromNow()}</a>
-        </p>
-    </article>
+      </div>
+    </li>
   )
 }
 
