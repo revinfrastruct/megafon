@@ -1,33 +1,15 @@
-.normal {
-  align-items: stretch;
-  border: 1px solid #0000ff;
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  margin-bottom: 1em;
-  padding: 1em;
-  width: 100%;
+article {
+    padding: 12px;
+    background: #fff;
+    border-bottom: 1px solid #EC1D24;
 }
 
-.icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 10px;
+article .hashtag {
+    color: #666;
 }
 
-.content {
-  flex: 1;
-  padding-left: 10px;
-  width: 100%;
-}
-
-.normal h2 {
-  font-weight: bold;
-  font-size: 1.3em;
-  margin-bottom: 0;
-}
-
-.normal time {
-  font-size: 0.76em;
+article .timestamp {
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #666;
 }

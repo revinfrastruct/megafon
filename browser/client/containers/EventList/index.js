@@ -58,23 +58,16 @@ class EventList extends Component {
     const channelTitle = this.props.channel.title
 
     return (
-      <div className={style['normal']}>
-        <div className={style['event-header']}>
-          <h2>{channelTitle}</h2>
-
-          <label htmlFor='isLive'>
-            Uppdaterar live
-          </label>
-
-          <Toggle
-            id='isLive'
-            defaultChecked={this.props.isLive}
-            onChange={this.handleToggle.bind(this)} />
+      <div className={style['main']}>
+        <div className={style['ticker']}>
+            <div className={style['header']}>
+                <h1>#nmr12nov</h1>
+                <div className={style['description']}>
+                    <p>12/11 har nazisterna i Nordiska motståndsrörelsen ansökt om att få demonstrera i Stockholm. <a href="https://www.facebook.com/events/1456368604376459/" className={style['readmore']}>Läs mer</a></p>
+                </div>
+            </div>
+            {events}
         </div>
-
-        <ol>
-          {events}
-        </ol>
       </div>
     )
   }
