@@ -21,6 +21,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
+    "json-loader": "^0.5.4",
     "moment": "^2.15.1",
     "postcss-loader": "^0.8.1",
     "postcss-normalize": "^0.3.0",
