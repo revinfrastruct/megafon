@@ -28,8 +28,10 @@ class EventList extends Component {
   }
 
   componentWillUnmount () {
-    const idChannel = this.props.params.idChannel
-    this.poller.remove(idChannel)
+    const {isLive, params: {idChannel}} = this.props
+    if (isLive) {
+      this.poller.remove(idChannel)
+    }
     actions.setChannelFilter(null)
   }
 
