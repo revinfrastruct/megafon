@@ -1,3 +1,4 @@
+/* global fetch */
 import 'whatwg-fetch'
 
 export default class Poller {
