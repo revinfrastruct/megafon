@@ -13,6 +13,8 @@ export default class Poller {
       channel,
       interval: setInterval(this.fetchEvents, 5000, channel)
     }]
+
+    this.fetchEvents(channel)
   }
 
   remove (channel) {
