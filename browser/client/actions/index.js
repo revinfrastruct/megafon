@@ -15,9 +15,9 @@ export function addChannel (channel) {
 
 export function addEvent (event) {
   return (dispatch, getState) => {
-    const unique = getState().events.eventList.find(e => e.id === event.id)
+    const exists = getState().events.eventList.find(e => e.id === event.id)
 
-    if (!unique) {
+    if (!exists) {
       dispatch({
         type: ADD_EVENT, event
       })
