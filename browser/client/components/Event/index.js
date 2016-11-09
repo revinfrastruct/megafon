@@ -29,9 +29,9 @@ const Event = ({kind, title, description, createdAt}) => {
           Publicerad {moment(createdAt).fromNow()}
         </time>
 
-        <p>
+        <div>
           {ReactHtmlParser(description)}
-        </p>
+        </div>
       </div>
     </li>
   )
