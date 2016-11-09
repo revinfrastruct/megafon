@@ -35,7 +35,18 @@ export default class Poller {
 
     fetch(url).then(response => response.json()).then(json => {
       for (let key in json) {
-        console.log(json[key])
+        const {content: description, time: createdAt} = json[key]
+
+        if (Number.isInteger(parseInt(key, 10))) {
+          store.dispatch(addEvent({
+            id: parseInt(key, 10),
+            title: 'hello',
+            description,
+            createdAt,
+            channel,
+            kind: 'tweet'
+          }))
+        }
       }
     })
   }
