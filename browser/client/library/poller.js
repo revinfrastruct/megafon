@@ -1,5 +1,7 @@
 /* global fetch */
 import 'whatwg-fetch'
+import store from '../store'
+import {addEvent} from '../actions'
 
 export default class Poller {
   constructor () {
