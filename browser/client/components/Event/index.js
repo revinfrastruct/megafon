@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './style.css'
 import moment from 'moment'
+import ReactHtmlParser from 'react-html-parser'
 
 import {
   IoIosInformatoutline,
@@ -29,7 +30,7 @@ const Event = ({kind, title, description, createdAt}) => {
         </time>
 
         <p>
-          {description}
+          {ReactHtmlParser(description)}
         </p>
       </div>
     </li>
