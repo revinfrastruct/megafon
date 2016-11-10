@@ -1,24 +1,10 @@
 .normal {
   align-items: stretch;
-  border: 1px solid #0000ff;
+  border-bottom: 1px solid #EC1D24;
   display: flex;
   justify-content: center;
   list-style: none;
-  margin-bottom: 1em;
-  padding: 1em;
-  width: 100%;
-}
-
-.icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 10px;
-}
-
-.content {
-  flex: 1;
-  padding-left: 10px;
+  padding: 12px;
   width: 100%;
 }
 
@@ -29,5 +15,13 @@
 }
 
 .normal time {
-  font-size: 0.76em;
+  font-size: 0.75rem;
+  font-style: italic;
+  color: #666;
+  text-decoration: underline;
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
 }
