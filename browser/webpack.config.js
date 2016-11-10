@@ -17,6 +17,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './static'),
+    publicPath: '/assets/',
     filename: 'bundle.js'
   },
   module: {
@@ -50,6 +51,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=2048'
       }
     ]
   },
