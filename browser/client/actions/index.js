@@ -1,6 +1,7 @@
 import {
   ADD_CHANNEL,
   ADD_EVENT,
+  REMOVE_EVENT,
   SET_CHANNEL_FILTER,
   SET_LIVE_TOGGLE
 } from 'constants'
@@ -22,6 +23,14 @@ export function addEvent (event) {
         type: ADD_EVENT, event
       })
     }
+  }
+}
+
+export function removeEvent (id) {
+  return (dispatch, getState) => {
+    dispatch({
+      type: REMOVE_EVENT, id
+    })
   }
 }
 

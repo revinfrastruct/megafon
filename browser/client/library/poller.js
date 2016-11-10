@@ -1,7 +1,7 @@
 /* global fetch */
 import 'whatwg-fetch'
 import store from '../store'
-import {addEvent} from '../actions'
+import {addEvent, removeEvent} from '../actions'
 
 export default class Poller {
   constructor () {
@@ -41,6 +41,7 @@ export default class Poller {
 
     fetch(url).then(response => response.json()).then(json => {
       const events = json['+']
+      const removedEvents = json['-']
 
       events.forEach(event => {
         store.dispatch(addEvent({
@@ -50,6 +51,10 @@ export default class Poller {
           channel,
           kind: 'tweet'
         }))
+      })
+
+      removedEvents.forEach(id => {
+        store.dispatch(removeEvent(id))
       })
     })
   }
