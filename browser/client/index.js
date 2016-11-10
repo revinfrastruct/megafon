@@ -17,11 +17,11 @@ moment.locale('sv')
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Redirect from='/' to='channels/sthlm12nov2016' />
+      <Redirect from='/' to='c/sthlm12nov2016' />
 
       <Route path='/' component={App}>
-        <Route path='channels' component={ChannelList} />
-        <Route path='channels/:idChannel' component={EventList} />
+        <Route path='c' component={ChannelList} />
+        <Route path='c/:idChannel' component={EventList} />
       </Route>
     </Router>
   </Provider>,
