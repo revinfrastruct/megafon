@@ -5,8 +5,8 @@ const initialState = {
   isLive: true,
   channelList: [
     {
-      topic: 'nmr',
-      title: 'NMR 12e September',
+      topic: 'sthlm12nov2016',
+      title: 'NMR 12e November',
       description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     },
 
