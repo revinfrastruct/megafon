@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actions from 'actions'
 import Poller from 'library/poller'
-import Toggle from 'react-toggle'
 import Event from 'components/Event'
 import style from './style.css'
 require('react-toggle/style.css')
