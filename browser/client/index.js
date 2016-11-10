@@ -7,9 +7,8 @@ import React from 'react'
 import App from './containers/App'
 import ChannelList from './containers/ChannelList'
 import EventList from './containers/EventList'
-import configure from './store'
+import store from './store'
 
-const store = configure()
 const history = syncHistoryWithStore(browserHistory, store)
 
 import moment from 'moment'

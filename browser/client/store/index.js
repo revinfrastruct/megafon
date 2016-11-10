@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import {logger} from '../middleware'
 import rootReducer from '../reducers'
 
-export default function configure (initialState) {
+const configure = (initialState) => {
   const create = window.devToolsExtension
     ? window.devToolsExtension()(createStore)
     : createStore
@@ -24,3 +24,5 @@ export default function configure (initialState) {
 
   return store
 }
+
+export default configure()

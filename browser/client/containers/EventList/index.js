@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as actions from 'actions'
-import socket from 'socket'
+import Poller from 'library/poller'
 import Toggle from 'react-toggle'
 import Event from 'components/Event'
 import style from './style.css'
@@ -14,10 +14,10 @@ class EventList extends Component {
     const {actions, isLive, params: {idChannel}} = props
     actions.setChannelFilter(idChannel)
 
+    this.poller = new Poller()
+
     if (isLive) {
-      socket.on(idChannel, event => {
-        actions.addEvent(event)
-      })
+      this.poller.add(idChannel)
     }
   }
 
@@ -28,8 +28,10 @@ class EventList extends Component {
   }
 
   componentWillUnmount () {
-    const idChannel = this.props.params.idChannel
-    socket.removeAllListeners(idChannel)
+    const {isLive, params: {idChannel}} = this.props
+    if (isLive) {
+      this.poller.remove(idChannel)
+    }
     actions.setChannelFilter(null)
   }
 
@@ -39,14 +41,12 @@ class EventList extends Component {
   }
 
   toggleSocketListener () {
-    const {actions, isLive, params: {idChannel}} = this.props
+    const {isLive, params: {idChannel}} = this.props
 
     if (!isLive) {
-      socket.on(idChannel, event => {
-        actions.addEvent(event)
-      })
+      this.poller.add(idChannel)
     } else {
-      socket.removeAllListeners(idChannel)
+      this.poller.remove(idChannel)
     }
   }
 
