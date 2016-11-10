@@ -66,7 +66,11 @@ module.exports = {
     require('rucksack-css')({
       autoprefixer: true
     }),
-    require('postcss-normalize')
+    require('postcss-normalize'),
+    require('postcss-assets')({
+      basePath: 'client/',
+      loadPaths: ['assets/']
+    })
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
