@@ -16,20 +16,3 @@ body {
   -ms-font-smoothing: antialiased;
   font-smoothing: antialiased;
 }
-
-ul,
-ol {
-  padding: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.normal {
-  margin: 0 auto;
-  max-width: 550px;
-  min-width: 230px;
-  padding: 10px;
-}
