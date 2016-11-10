@@ -56,23 +56,16 @@ class EventList extends Component {
     })
 
     const channelTitle = this.props.channel.title
+    const channelDescription = this.props.channel.description
 
     return (
       <div className={style['normal']}>
-        <div className={style['event-header']}>
+        <header className={style['header']}>
           <h2>{channelTitle}</h2>
+          <p>{channelDescription}</p>
+        </header>
 
-          <label htmlFor='isLive'>
-            Uppdaterar live
-          </label>
-
-          <Toggle
-            id='isLive'
-            defaultChecked={this.props.isLive}
-            onChange={this.handleToggle.bind(this)} />
-        </div>
-
-        <ol>
+        <ol className={style['event-list']}>
           {events}
         </ol>
       </div>

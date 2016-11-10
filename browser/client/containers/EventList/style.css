@@ -1,26 +1,24 @@
-.event-header {
-  align-items: center;
-  display: flex;
+.normal {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.event-header h2 {
-  color: #999999;
-  display: block;
-  flex: 1;
-  font-size: 1em;
+.header {
+  background-color: #fbd2d3;
+  padding: 12px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #EC1D24;
+  margin-bottom: 12px;
+}
+
+.header p {
   margin: 0;
 }
 
-.event-header h2:before {
-  color: #cccccc;
-  content: '#';
-  margin-right: 2px;
-}
-
-.event-header label {
-  display: block;
-  font-weight: bold;
-  margin-right: 10px;
-  position: relative;
-  text-align: right;
+.event-list {
+  margin: 0;
+  padding: 0;
 }

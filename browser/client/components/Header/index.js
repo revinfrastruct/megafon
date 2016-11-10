@@ -5,9 +5,11 @@ class Header extends Component {
   render () {
     return (
       <header className={style['normal']}>
-        <h1 className={style['logotype']}>
-          Motkraft
-        </h1>
+        <div className={style['container']}>
+          <h1 className={style['logotype']}>
+            Motkraft
+          </h1>
+        </div>
       </header>
     )
   }
