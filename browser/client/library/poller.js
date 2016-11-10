@@ -51,7 +51,13 @@ export default class Poller {
       })
 
       events['-'].forEach(id => {
-        store.dispatch(removeEvent(id))
+        const exists = store.events.eventsList.find(event => {
+          return event.id === id
+        })
+
+        if (exists) {
+          store.dispatch(removeEvent(id))
+        }
       })
     })
   }
