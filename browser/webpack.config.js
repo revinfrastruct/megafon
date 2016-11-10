@@ -17,6 +17,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, './static'),
+    publicPath: '/assets/',
     filename: 'bundle.js'
   },
   module: {
@@ -50,6 +51,10 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: 'url-loader?limit=2048'
       }
     ]
   },
@@ -66,7 +71,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development') }
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+      }
     })
   ],
   devServer: {
