@@ -36,23 +36,21 @@ export default class Poller {
   }
 
   fetchEvents (channel) {
-    const url = `https://modkraft.s3.amazonaws.com/tickers/data/${channel}.json`
+    const url =
+      `https://modkraft.s3.eu-central-1.amazonaws.com/tickers/data/${channel}.json`
 
     fetch(url).then(response => response.json()).then(json => {
-      for (let key in json) {
-        const {content: description, time} = json[key]
+      const events = json['+']
 
-        if (Number.isInteger(parseInt(key, 10))) {
-          store.dispatch(addEvent({
-            id: parseInt(key, 10),
-            title: 'hello',
-            description,
-            createdAt: new Date(time * 1000),
-            channel,
-            kind: 'tweet'
-          }))
-        }
-      }
+      events.forEach(event => {
+        store.dispatch(addEvent({
+          id: event.id,
+          description: event.content,
+          createdAt: new Date(event.time * 1000),
+          channel,
+          kind: 'tweet'
+        }))
+      })
     })
   }
 }
