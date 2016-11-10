@@ -39,11 +39,8 @@ export default class Poller {
     const url =
       `https://modkraft.s3.eu-central-1.amazonaws.com/tickers/data/${channel}.json`
 
-    fetch(url).then(response => response.json()).then(json => {
-      const events = json['+']
-      const removedEvents = json['-']
-
-      events.forEach(event => {
+    fetch(url).then(response => response.json()).then(events => {
+      events['+'].forEach(event => {
         store.dispatch(addEvent({
           id: event.id,
           description: event.content,
@@ -53,7 +50,7 @@ export default class Poller {
         }))
       })
 
-      removedEvents.forEach(id => {
+      events['-'].forEach(id => {
         store.dispatch(removeEvent(id))
       })
     })
