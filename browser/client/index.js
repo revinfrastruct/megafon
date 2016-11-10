@@ -17,7 +17,7 @@ moment.locale('sv')
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Redirect from='/' to='channels' />
+      <Redirect from='/' to='channels/sthlm12nov2016' />
 
       <Route path='/' component={App}>
         <Route path='channels' component={ChannelList} />
