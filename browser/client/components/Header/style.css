@@ -11,7 +11,7 @@
 }
 
 .logotype {
-  background-image: resolve('motkraft.svg');
+  background-image: inline('motkraft.svg');
   background-repeat: no-repeat;
   background-size: 200px 40px;
   height: 40px;
