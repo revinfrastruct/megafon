@@ -36,9 +36,7 @@ class Poller {
   }
 
   fetchEvents (channel) {
-    const url =
-      'https://modkraft.s3.eu-central-1.amazonaws.com/' +
-      `tickers/data/${channel}.json`
+    const url = `/tickers/data/${channel}.json`
 
     fetch(url).then(response => response.json()).then(events => {
       events['+'].forEach(event => {
