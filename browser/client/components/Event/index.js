@@ -3,7 +3,7 @@ import style from './style.css'
 import moment from 'moment'
 import ReactHtmlParser from 'react-html-parser'
 
-const Event = ({kind, description, createdAt}) => {
+const Event = ({kind, description, createdAt, media}) => {
   return (
     <li className={style['normal']}>
       <div className={style['content']}>
@@ -14,6 +14,12 @@ const Event = ({kind, description, createdAt}) => {
         <time dateTime={createdAt}>
           Publicerad {moment(createdAt).fromNow()}
         </time>
+
+        {(
+          media
+          ? <img src={media.src} width={media.w} height={media.h} />
+          : undefined
+        )}
       </div>
     </li>
   )
