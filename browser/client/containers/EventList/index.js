@@ -76,7 +76,7 @@ function mapStateToProps (state, ownProps) {
   return {
     events: state.events.eventList.filter(event => {
       return event.channel === state.events.channelFilter
-    }),
+    }).sort((a, b) => b.createdAt - a.createdAt),
     channel: state.channels.channelList.find(channel => {
       return channel.topic === ownProps.params.idChannel
     }),
