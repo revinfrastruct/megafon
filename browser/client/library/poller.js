@@ -47,7 +47,8 @@ class Poller {
           description: event.content,
           createdAt: new Date(event.time * 1000),
           channel,
-          kind: 'tweet'
+          kind: 'tweet',
+          media: event.media
         }))
       })
 
