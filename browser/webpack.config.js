@@ -19,7 +19,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     publicPath: '/assets/',
-    filename: 'bundle.js'
+    filename: 'assets/bundle.js'
   },
   module: {
     loaders: [
@@ -74,7 +74,7 @@ module.exports = {
     })
   ],
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'assets/vendor.bundle.js'),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'development')
