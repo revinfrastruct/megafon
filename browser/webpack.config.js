@@ -25,7 +25,7 @@ module.exports = {
     loaders: [
       {
         test: /\.html$/,
-        loader: 'file?name=[name].[ext]'
+        loader: 'file-loader?name=[path][name].[ext]!extract-loader!html-loader?interpolate=require'
       },
       {
         test: /\.css$/,
@@ -54,11 +54,16 @@ module.exports = {
         loader: 'json'
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(png|jpg|svg)$/,
         loader: 'url-loader?limit=2048'
       }
     ]
   },
+  htmlLoader: {
+    ignoreCustomFragments: [/\{\{.*?}}/],
+    root: path.resolve(__dirname, 'assets'),
+    attrs: ['img:src', 'link:href']
+},
   resolve: {
     modulesDirectories: ['node_modules', './client'],
     extensions: ['', '.js', '.jsx']

@@ -5,6 +5,8 @@ import * as actions from 'actions'
 import style from './style.css'
 import Header from 'components/Header'
 
+var myImage = require("./motkraft.png");
+
 class App extends Component {
   render () {
     const {children} = this.props
