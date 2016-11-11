@@ -28,9 +28,25 @@
   right: 0;
   top: 7px;
 }
-
-.social img {
-  height: 26px;
-  margin-right: 12px;
-  width: auto;
+.social .facebook {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    background-image: inline('icon_facebook.svg');
+    background-repeat: no-repeat;
+    background-size: auto 26px;
+    width: 26px;
+    height: 26px;
+    margin-right: 12px;
+}
+.social .twitter {
+    display: inline-block;
+    overflow: hidden;
+    text-indent: -9999px;
+    background-image: inline('icon_twitter.svg');
+    background-repeat: no-repeat;
+    background-size: auto 26px;
+    width: 32px;
+    height: 26px;
+    margin-right: 12px;
 }

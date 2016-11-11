@@ -10,8 +10,8 @@ class Header extends Component {
             Motkraft
           </h1>
           <div className={style['social']}>
-            <a href="https://www.facebook.com/motkraft/"><img src="/assets/icon_facebook.svg" alt="Motkraft på Facebook" /></a>
-            <a href="https://twitter.com/motkraft"><img src="/assets/icon_twitter.svg" alt="Motkraft på Twitter" /></a>
+            <a href="https://www.facebook.com/motkraft/" title="Motkraft på Facebook"><span className={style['facebook']}>Facebook</span></a>
+            <a href="https://twitter.com/motkraft" alt="Motkraft på Twitter"><span className={style['twitter']}>Twitter</span></a>
           </div>
         </div>
       </header>
