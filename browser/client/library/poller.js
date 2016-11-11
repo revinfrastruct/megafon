@@ -11,7 +11,7 @@ class Poller {
   add (channel) {
     this.intervals = [...this.intervals, {
       channel,
-      interval: setInterval(this.fetchEvents, 5000, channel)
+      interval: setInterval(this.fetchEvents, 15000, channel)
     }]
 
     this.fetchEvents(channel)
