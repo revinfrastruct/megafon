@@ -7,19 +7,17 @@ const Event = ({kind, description, createdAt, media}) => {
   return (
     <li className={style['normal']}>
       <div className={style['content']}>
-        <div>
-          {ReactHtmlParser(description)}
-        </div>
-
         <time dateTime={createdAt}>
-          Publicerad {moment(createdAt).fromNow()}
+          {moment(createdAt).fromNow()}
         </time>
-
         {(
           media
           ? <img src={media.src} width={media.w} height={media.h} />
           : undefined
         )}
+        <div>
+          {ReactHtmlParser(description)}
+        </div>
       </div>
     </li>
   )
