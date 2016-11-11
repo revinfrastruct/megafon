@@ -13,7 +13,7 @@ class EventList extends Component {
     const {actions, isLive, params: {idChannel}} = props
     actions.setChannelFilter(idChannel)
 
-    this.poller = new Poller()
+    this.poller = Poller
 
     if (isLive) {
       this.poller.add(idChannel)

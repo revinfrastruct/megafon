@@ -3,7 +3,7 @@ import 'whatwg-fetch'
 import store from '../store'
 import {addEvent, removeEvent} from '../actions'
 
-export default class Poller {
+class Poller {
   constructor () {
     this.intervals = []
   }
@@ -63,3 +63,5 @@ export default class Poller {
     })
   }
 }
+
+export default new Poller()
