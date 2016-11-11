@@ -11,9 +11,6 @@ import store from './store'
 
 const history = syncHistoryWithStore(browserHistory, store)
 
-import moment from 'moment'
-moment.locale('sv')
-
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>

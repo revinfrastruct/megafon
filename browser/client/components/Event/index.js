@@ -1,6 +1,5 @@
 import React from 'react'
 import style from './style.css'
-import moment from 'moment'
 import ReactHtmlParser from 'react-html-parser'
 
 const Event = ({kind, description, createdAt, media}) => {
@@ -8,7 +7,7 @@ const Event = ({kind, description, createdAt, media}) => {
     <li className={style['normal']}>
       <div className={style['content']}>
         <time dateTime={createdAt}>
-          {moment(createdAt).fromNow()}
+          {(new Date(createdAt)).toISOString().slice(0, 19).replace('T', ' ').replace(/:[0-9]{2}$/, '')}
         </time>
         {(
           media
