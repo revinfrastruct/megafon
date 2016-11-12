@@ -3,13 +3,12 @@ import style from './style.css'
 import ReactHtmlParser from 'react-html-parser'
 
 const Event = ({kind, description, createdAt, media}) => {
-
-  const time = new Date(createdAt);
+  const time = new Date(createdAt)
   const timeStr = time.getUTCFullYear() + '-' +
-    ('00' + (time.getMonth()+1)).slice(-2) + '-' +
-    ('00' + time.getDate()).slice(-2) + ' ' + 
-    ('00' + time.getHours()).slice(-2) + ':' + 
-    ('00' + time.getMinutes()).slice(-2);
+    ('00' + (time.getMonth() + 1)).slice(-2) + '-' +
+    ('00' + time.getDate()).slice(-2) + ' ' +
+    ('00' + time.getHours()).slice(-2) + ':' +
+    ('00' + time.getMinutes()).slice(-2)
 
   return (
     <li className={style['normal']}>
